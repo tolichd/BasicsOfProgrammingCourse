@@ -1,0 +1,4 @@
+# ninja log v5
+0	286	7032545413176520	CMakeFiles/18.dir/main.c.obj	195839a66db0aff
+9	323	7032545413686215	CMakeFiles/18.dir/libs/data_structures/vector/vector.c.obj	89b12db92484d182
+323	701	7032545417060154	18.exe	5b4ac6d76f255385

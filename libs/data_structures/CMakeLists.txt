@@ -3,4 +3,6 @@ project(data_structures C)
 
 set(CMAKE_C_STANDARD 11)
 
-
+add_library(data_structures
+        vector/vector.c
+        )
