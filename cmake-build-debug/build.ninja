@@ -61,8 +61,8 @@ build CMakeFiles/18.dir/libs/data_structures/vector/vector.c.obj: C_COMPILER__18
   OBJECT_DIR = CMakeFiles\18.dir
   OBJECT_FILE_DIR = CMakeFiles\18.dir\libs\data_structures\vector
 
-build CMakeFiles/18.dir/libs/data_structures/vector/voidVector.c.obj: C_COMPILER__18_Debug D$:/ycheba/CLionPrograms/OP/18/libs/data_structures/vector/voidVector.c || cmake_object_order_depends_target_18
-  DEP_FILE = CMakeFiles\18.dir\libs\data_structures\vector\voidVector.c.obj.d
+build CMakeFiles/18.dir/libs/data_structures/vector/vectorVoid.c.obj: C_COMPILER__18_Debug D$:/ycheba/CLionPrograms/OP/18/libs/data_structures/vector/vectorVoid.c || cmake_object_order_depends_target_18
+  DEP_FILE = CMakeFiles\18.dir\libs\data_structures\vector\vectorVoid.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu11
   OBJECT_DIR = CMakeFiles\18.dir
   OBJECT_FILE_DIR = CMakeFiles\18.dir\libs\data_structures\vector
@@ -75,7 +75,7 @@ build CMakeFiles/18.dir/libs/data_structures/vector/voidVector.c.obj: C_COMPILER
 #############################################
 # Link the executable 18.exe
 
-build 18.exe: C_EXECUTABLE_LINKER__18_Debug CMakeFiles/18.dir/main.c.obj CMakeFiles/18.dir/libs/data_structures/vector/vector.c.obj CMakeFiles/18.dir/libs/data_structures/vector/voidVector.c.obj
+build 18.exe: C_EXECUTABLE_LINKER__18_Debug CMakeFiles/18.dir/main.c.obj CMakeFiles/18.dir/libs/data_structures/vector/vector.c.obj CMakeFiles/18.dir/libs/data_structures/vector/vectorVoid.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\18.dir

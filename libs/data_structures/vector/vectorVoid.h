@@ -1,7 +1,9 @@
-#ifndef INC_18_VOIDVECTOR_H
-#define INC_18_VOIDVECTOR_H
+#ifndef INC_18_VECTORVOID_H
+#define INC_18_VECTORVOID_H
 
 #include <limits.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 typedef struct vectorVoid {
     void *data;
@@ -12,4 +14,4 @@ typedef struct vectorVoid {
 
 
 
-#endif //INC_18_VOIDVECTOR_H
+#endif //INC_18_VECTORVOID_H
