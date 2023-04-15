@@ -38,31 +38,58 @@ void deleteVector(vector *v) {
     shrinkToFit(v);
 }
 
-bool isEmpty(vector *v){
+bool isEmpty(vector *v) {
     return v->size == 0;
 }
 
-bool isFull(vector *v){
+bool isFull(vector *v) {
     return v->size == v->capacity;
 }
 
-int getVectorValue(vector *v, size_t i){
+int getVectorValue(vector *v, size_t i) {
     return v->data[i];
 }
 
-void pushBack(vector *v, int x){
-    if(isFull(v))
-        reserve(v, v->capacity+1);
+void pushBack(vector *v, int x) {
+    if (isFull(v))
+        reserve(v, v->capacity + 1);
 
     v->data[v->size] = x;
     v->size++;
 }
 
-void popBack(vector *v){
-    if(isEmpty(v)){
+void popBack(vector *v) {
+    if (isEmpty(v)) {
         fprintf(stderr, "vector is Empty");
         exit(1);
     }
 
     v->size--;
+}
+
+int *atVector(vector *v, size_t index) {
+    if (index >= v->size) {
+        fprintf(stderr, "IndexError: v->data[%lld] is not exists", index);
+        exit(1);
+    }
+
+    return v->data + index;
+}
+
+int *back(vector *v) {
+    if (v->size == 0) {
+        fprintf(stderr, "Error: vector is empty");
+        exit(1);
+    }
+
+    return v->data + (v->size - 1);
+}
+
+int* front(vector *v){
+    if (v->size == 0) {
+        fprintf(stderr, "Error: vector is empty");
+        exit(1);
+    }
+
+    return v->data;
 }
