@@ -1,7 +1,7 @@
 #include "vectorVoid.h"
 
-vectorVoid createVectorVoid(size_t n, size_t baseTypeSize){
-    int *data;
+vectorVoid createVectorVoid(size_t n, size_t baseTypeSize) {
+    void *data;
     if (!(data = (int *) malloc(baseTypeSize * n))) {
         fprintf(stderr, "bad alloc");
         exit(1);
@@ -36,6 +36,7 @@ void deleteVectorV(vectorVoid *v) {
     free(v->data);
     clearV(v);
     shrinkToFitV(v);
+    v->baseTypeSize = 0;
 }
 
 bool isEmptyV(vectorVoid *v) {
@@ -46,19 +47,19 @@ bool isFullV(vectorVoid *v) {
     return v->size == v->capacity;
 }
 
-void getVectorValueV(vectorVoid *v, size_t index, void *destination){
+void getVectorValueV(vectorVoid *v, size_t index, void *destination) {
     if (index >= v->size) {
-        fprintf(stderr, "IndexError: v->data[%lld] is not exists", index);
+        fprintf(stderr, "IndexError: v->data[%zd] is not exists", index);
         exit(1);
     }
 
-    char *source = (char *) v->data + (index * v->baseTypeSize);
+    char *source = (char *) v->data + index * v->baseTypeSize;
     memcpy(destination, source, v->baseTypeSize);
 }
 
-void setVectorValueV(vectorVoid *v, size_t index, void *source){
+void setVectorValueV(vectorVoid *v, size_t index, void *source) {
     if (index >= v->size) {
-        fprintf(stderr, "IndexError: v->data[%lld] is not exists", index);
+        fprintf(stderr, "IndexError: v->data[%zd] is not exists", index);
         exit(1);
     }
 
@@ -70,7 +71,7 @@ void pushBackV(vectorVoid *v, void *source) {
     if (isFullV(v))
         reserveV(v, v->capacity + 1);
 
-    char *destination = (char *) v->data + (v->size) * v->baseTypeSize;
+    char *destination = (char *) v->data + v->size * v->baseTypeSize;
     memcpy(destination, source, v->baseTypeSize);
     v->size++;
 }
