@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdint.h>
 #include <assert.h>
 
 #include "libs/data_structures/vector/vector.h"
@@ -66,7 +64,7 @@ void test_front_oneElementInVector() {
     v.size = 1;
     v.data[0] = 4;
 
-    assert(v.data == back(&v));
+    assert(v.data == front(&v));
 }
 
 void tests() {

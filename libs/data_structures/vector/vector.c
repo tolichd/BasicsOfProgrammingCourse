@@ -16,7 +16,7 @@ void reserve(vector *v, size_t newCapacity) {
 
     if (realloc(v->data, newCapacity * sizeof(int)) == NULL) {
         fprintf(stderr, "bad realloc");
-        exit(2);
+        exit(1);
     }
 
     v->capacity = newCapacity;
@@ -60,7 +60,7 @@ void pushBack(vector *v, int x) {
 
 void popBack(vector *v) {
     if (isEmpty(v)) {
-        fprintf(stderr, "vector is Empty");
+        fprintf(stderr, "Error: vector is Empty");
         exit(1);
     }
 
@@ -77,7 +77,7 @@ int *atVector(vector *v, size_t index) {
 }
 
 int *back(vector *v) {
-    if (v->size == 0) {
+    if (isEmpty(v)) {
         fprintf(stderr, "Error: vector is empty");
         exit(1);
     }
@@ -85,8 +85,8 @@ int *back(vector *v) {
     return v->data + (v->size - 1);
 }
 
-int* front(vector *v){
-    if (v->size == 0) {
+int *front(vector *v) {
+    if (isEmpty(v)) {
         fprintf(stderr, "Error: vector is empty");
         exit(1);
     }
