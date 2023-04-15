@@ -79,9 +79,6 @@ void tests() {
 }
 
 int main() {
-    tests();
-
-    vectorVoid v;
 
     return 0;
 }
